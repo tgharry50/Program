@@ -106,19 +106,19 @@ while(True):
             Big_Image_Crop=Big_Image_Crop.save(f"{big}_new_{label}.jpg")
             i+=1
         ##Folder
-        roi_folder_path=os.path.join( os.path.dirname( file_path ), f"{roi_regex_id}_{label}" )
+        roi_folder_path=os.path.join( os.path.dirname( file_path ), f"{name}_{label}" )
         os.makedirs( roi_folder_path, exist_ok = True )
         for file in ["1_OK", "2_NOK"]:
             for filex in txt_version:
-                shutil.copy2(filex, f'{destination}/{nazwa_końcowa}_{label}.txt' )
+                shutil.copy2(filex, f'{destination}/{name}_{label}.txt' )
             for file_tfile in tflite_version:
-                shutil.copy2(file_tfile, f'{destination}/{nazwa_końcowa}_{label}.tflite' )
+                shutil.copy2(file_tfile, f'{destination}/{name}_{label}.tflite' )
         ##Zapis
         for folder_name in ["1_OK", "2_NOK"]:
             folder_path = os.path.join(roi_folder_path, folder_name)
             os.makedirs(folder_path, exist_ok=True)
             # Zapisz plik tekstowy z parametrami ROI w katalogu głównym
-            output_file_path=os.path.join( os.path.dirname( file_path ), f"{roi_regex_id}_{label}.txt" )
+            output_file_path=os.path.join( os.path.dirname( file_path ), f"{name}_{label}.txt" )
             with open( output_file_path, "w" ) as f :
                 f.write( roi_data )
 
