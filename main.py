@@ -65,10 +65,10 @@ while(True):
     roi_regex_height = r'height="(.+)"'
     roi_height=re.findall( roi_regex_height, textest)
     ##x
-    roi_regex_x = r'x="(.+)"'
+    roi_regex_x = r'\s[x]="(.+)"'
     roi_x=re.findall( roi_regex_x, textest )
     ##y
-    roi_regex_y = r'y="(.+)"'
+    roi_regex_y = r'\s[y]="(.+)"'
     roi_y=re.findall( roi_regex_y, textest )
     ##label
     roi_regex_label = r'"(.+_ROI)"'
